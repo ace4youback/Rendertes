@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGL Raymarching 3D Fractal Benchmark</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loading" class="loading">Initializing WebGL Raymarching Engine...</div>
+    
+    <canvas id="canvas"></canvas>
+    
+    <div class="ui-panel">
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-value" id="resolution">1920x1080</div>
+                <div class="stat-label">RESOLUTION</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="iterations">128</div>
+                <div class="stat-label">ITERATIONS</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="complexity">High</div>
+                <div class="stat-label">COMPLEXITY</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="renderer">WebGL 2.0</div>
+                <div class="stat-label">RENDERER</div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label class="control-label">Iterations (Performance Impact)</label>
+                <input type="range" class="control-input" id="iterSlider" min="32" max="256" value="128">
+            </div>
+            
+            <div class="control-group">
+                <label class="control-label">Fractal Power</label>
+                <input type="range" class="control-input" id="powerSlider" min="2" max="12" value="8" step="0.1">
+            </div>
+            
+            <div class="control-group">
+                <label class="control-label">Animation Speed</label>
+                <input type="range" class="control-input" id="speedSlider" min="0" max="3" value="1" step="0.1">
+            </div>
+
+            <div class="preset-buttons">
+                <button class="preset-btn" onclick="setPreset('performance')">Performance</button>
+                <button class="preset-btn" onclick="setPreset('quality')">Quality</button>
+                <button class="preset-btn" onclick="setPreset('extreme')">Extreme</button>
+                <button class="preset-btn" onclick="setPreset('psychedelic')">Psychedelic</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="fps-indicator">
+        <div class="fps-value" id="fps">60</div>
+        <div class="fps-label">FPS</div>
+    </div>
+
+    <div class="benchmark-info">
+        <strong>WebGL Raymarching 3D Fractal Benchmark</strong> - 
+        Use mouse to rotate, wheel to zoom, right-click to pan. 
+        Adjust settings to test your GPU performance.
+        <span id="gpu-info" style="margin-left: 20px;"></span>
+    </div>
+
+    <!-- Thêm thông tin tác giả ở đây -->
+    <div class="author-info">
+        <div>Author: Trần Văn Khoa</div>
+        <div>Contacts: +84 344197212</div>
+        <div>Social media: <a href="https://www.facebook.com/profile.php?id=100023401267174" target="_blank">Facebook</a></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
